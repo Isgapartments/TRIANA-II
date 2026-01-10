@@ -23,7 +23,7 @@ header.page-nav {
   display: block;
   margin: 0 auto 8px auto;
   max-width: 160px;
-  height: 0 auto 8px auto;
+  height: auto;
 }
 .page-header-inner h1 {
   font-size: 2.2em;
@@ -149,4 +149,66 @@ header.page-nav {
   .tabs { flex-direction: column; gap: 8px; }
   .tab-link { width: 97vw; padding: 13px 0; font-size: 1.07em; }
   .page-header-inner h1 { font-size: 1.10em; }
+}
+/*APARTIR DE AQUI PARA FULL SCREEN PHONE 
+/* GLOBAL STYLES - Elimina márgenes/padding en navegador */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow-x: hidden; /* Evita scroll lateral */
+}
+
+/* HEADER Y BOTONES IDIOMA */
+header.page-nav {
+    width: 100%; /* Full ancho */
+    background: transparent;
+}
+
+.language-buttons {
+    gap: 6px; /* Más armónico en móviles */
+}
+
+/* AJUSTE DEL VIDEO `banner` */
+.banner {
+    width: 100%; /* Siempre adapta al ancho de pantalla */
+    max-width: 600px; /* Limitar tamaño máximo */
+    height: auto; /* Mantener proporción */
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 12px; /* Controla distancias en móviles */
+    width: 100vw;
+    padding: 12px;
+    overflow: hidden;
+}
+
+/* HACER QUE LINKS Y SECTION FORMEN BLOQUES RESPONSIVOS */
+.video-section {
+    box-sizing: border-box; /* Prevenir desbordes */
+    width: 90%;
+    margin: auto; /* Centra */
+}
+
+/* MEDIA QUERIES - Estilos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    header.page-nav h1 {
+        font-size: 1.4em; /* Texto más compacto */
+    }
+
+    .home-icon svg {
+        width: 42px; /* Icono más pequeño en teléfonos */
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr; /* Deja una sola columna */
+        gap: 10px;
+    }
+
+    .tab-link {
+        padding: 8px; /* Botón más eficiente */
+    }
 }
